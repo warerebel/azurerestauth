@@ -25,7 +25,7 @@ let httpOtpions = {
             },
 }
 
-httpOptions.headers.Authorization = myAzureStorageSign(httpOtions);
+httpOptions.headers.Authorization = myAzureStorageSign.getAuthHeaderValue(httpOtions);
 ```
 
 # Build and Test
