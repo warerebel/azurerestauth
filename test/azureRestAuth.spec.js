@@ -24,11 +24,19 @@ describe("It generates azure shared key authorizaton string", function(){
             method: "GET",
             headers: {
                 "Content-Encoding": "gzip",
+                "Content-Language": "en",
+                "Content-MD5": "MD5String",
+                "Content-Type": "application/json",
                 nonstandard: "test",
-                Date: date
+                Date: date,
+                "If-Modified-Since": "Tue, 05 Jul 2016 06:48:26 GMT",
+                "If-Match": "itemOne",
+                "If-None-Match": "itemTwo",
+                "If-Unmodified-Since": "Tue, 07 Jul 2016 06:48:26 GMT",
+                "Range": "testRange"
             }
         };
-        let expectedString = "GET\ngzip\n\n\n\n\n" + date + "\n\n\n\n\n\n";
+        let expectedString = "GET\ngzip\nen\n\nMD5String\napplication/json\n" + date + "\nTue, 05 Jul 2016 06:48:26 GMT\nitemOne\nitemTwo\nTue, 07 Jul 2016 06:48:26 GMT\ntestRange\n";
         assert.deepEqual(myAzureSign.headerString(testObject), expectedString);
     });
     
