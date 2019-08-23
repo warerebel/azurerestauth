@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/warerebel/azurerestauth.svg?branch=master)](https://travis-ci.com/warerebel/azurerestauth)
+[![Coverage Status](https://coveralls.io/repos/github/warerebel/azurerestauth/badge.svg?branch=master)](https://coveralls.io/github/warerebel/azurerestauth?branch=master)
+<br />
+
 # Introduction 
 Node module to provide Azure shared key authorization strings for using storage REST API.
 

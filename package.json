@@ -1,6 +1,6 @@
 {
-  "name": "azurerestauth",
-  "version": "0.1.0",
+  "name": "@warerebel/azurerestauth",
+  "version": "0.2.0",
   "description": "Node module to provide Azure REST API shared key authorization headers",
   "main": "lib/azureRestAuth.js",
   "directories": {
@@ -18,6 +18,12 @@
   },
   "author": "Chris Lount",
   "license": "GPL-3.0",
+  "keywords": [
+    "azure",
+    "microsoft azure",
+    "api authentication",
+    "shared key"
+  ],
   "devDependencies": {
     "coveralls": "^3.0.6",
     "eslint": "^6.2.1",
