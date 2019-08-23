@@ -1,0 +1,23 @@
+language: node_js
+
+node_js:
+
+- lts/*
+
+after_success: npm run coverage
+
+deploy:
+
+  provider: npm
+
+  email: npm@warerebel.com
+
+  api_key:
+
+    secure: 
+
+  on:
+
+    tags: true
+
+    repo: warerebel/azurerestauth
