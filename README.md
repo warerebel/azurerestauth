@@ -3,15 +3,15 @@
 <br />
 
 # Introduction 
-Node module to provide Azure shared key authorization strings for using storage REST API.
+Node module to provide Azure shared key authorization strings for using the storage REST API.
 
 # Getting Started
 Call the constructor with the storage account name and the shared key that will be used to sign requests to the REST API.
 Call `getAuthHeaderValue` with the http request options and the `Authorization` header value will be returned. 
 ```javascript
-const azureStorageSign = require("azureStorageSign");
+const azureRestAuth = require("azureRestAuth");
 
-let myAzureStorageSign = new azureStorageSign("account name", "Shared key");
+let myAzureRestAuth = new azureRestAuth("account name", "Shared key");
 
 let httpOtpions = {
     method: "GET",
@@ -25,7 +25,7 @@ let httpOtpions = {
             },
 }
 
-httpOptions.headers.Authorization = myAzureStorageSign.getAuthHeaderValue(httpOtions);
+httpOptions.headers.Authorization = myAzureRestAuth.getAuthHeaderValue(httpOtions);
 ```
 
 # Build and Test

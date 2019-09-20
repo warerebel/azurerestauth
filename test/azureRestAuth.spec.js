@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const azureSign = require("../lib/azureRestAuth");
+const azureSign = require("../dist/azureRestAuth");
 const assert = require("assert");
 
 describe("It generates azure shared key authorizaton string", function(){
@@ -10,9 +10,11 @@ describe("It generates azure shared key authorizaton string", function(){
     
     it("Produces a canonacolised string from x-ms- header values", function(){
         let testObject = {
-            "not-ms-header": "test data",
-            "x-ms-version": "2014-02-14",
-            "x-ms-date": "Sat, 21   Feb 2015 00:48:38 GMT"
+            headers: {
+                "not-ms-header": "test data",
+                "x-ms-version": "2014-02-14",
+                "x-ms-date": "Sat, 21   Feb 2015 00:48:38 GMT"
+            }
         };
         let expectedString = "x-ms-date:Sat, 21 Feb 2015 00:48:38 GMT\nx-ms-version:2014-02-14\n";
         assert.deepEqual(myAzureSign.canonicalisedHeaders(testObject), expectedString);
