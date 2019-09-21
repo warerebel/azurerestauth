@@ -6,6 +6,7 @@ interface HttpOptions {
     host: string;
     protocol: string;
     path: string;
+    [propName: string]: any;
 }
 
 class AzureSign{

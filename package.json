@@ -1,6 +1,6 @@
 {
   "name": "@warerebel/azurerestauth",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Node module to provide Azure REST API shared key authorization headers",
   "main": "dist/azureRestAuth.js",
   "types": "azureRestAuth.d.ts",
