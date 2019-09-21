@@ -8,6 +8,4 @@ deploy:
   email: npm@warerebel.com
   api_key:
     secure: c1Bz0UgSVXXKv7Jne7UlPcnsHYHjGNg5qwvj+mVU+A55FT0yJmb0yFKGkkv98k88ORXBf0VkiVgjqLBPoM3tqajn4wO/k3HShcoIb7i81E2wDW2QC02nRqMTfesdFC+RPqlUwnIYEPRlpqvkBYI0cZkAaNTdx5Ce3P/dD3axF0LfoSIuxSpcpurUjHV0i5+PAaIdlUsy2SQJsIexxREeM30QTkZX1cKnVbvDJZ3aLr4rlkC2dVsv6xIGDGJVXHDms4nLClCwJHuAne7PJXSW9gDrndvbqbVq6aY8JnoLW//xbq6yCNteSqaO4BXAfgX1MBARQAi/RimxZa+Va/32sW7vVuvGTDLBtdF6fAK5fPVy4OGiweudEdWr+ZJ5O+SxBQ2xkGq+OkiSqs8LkrbQUwoSzWEFnXHHiKYb7nXY/envUg3MuUYHVekv7IzC7CgBgvORVpBStGhKtrgfYVuxMV1y0Y+7e/78U5d8KpW3OzmU7cTpJvdnrIe+rVxk6IMivrhU6WT+6maG9HACtml6tB+4dhdlekEeJ9y3JSx7O+ekHFIMi6E0DnE6cP+3EFNUMK/U4EqnKfFYHMvAgVs9vuubPi7MFYGacDoXqy2cPsMULJySOqHX9u4Gr3SYSQFWHMkaqLz4fVvsuP+PTxFLvF7PcrJO0lueOECu7N5NcY4=
-  on:
-    tags: true
-    repo: warerebel/azurerestauth
+  repo: warerebel/azurerestauth
