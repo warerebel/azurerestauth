@@ -1,6 +1,6 @@
 {
   "name": "@warerebel/azurerestauth",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Node module to provide Azure REST API shared key authorization headers",
   "main": "dist/azureRestAuth.js",
   "types": "azureRestAuth.d.ts",
@@ -9,7 +9,7 @@
     "test": "test"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "node node_modules/typescript/bin/tsc",
     "test": "node node_modules/nyc/bin/nyc node_modules/mocha/bin/mocha test/*.spec.js",
     "lint": "node node_modules/eslint/bin/eslint src/*.ts",
     "coverage": "node node_modules/nyc/bin/nyc report --reporter=text-lcov | node_modules/coveralls/bin/coveralls.js"
