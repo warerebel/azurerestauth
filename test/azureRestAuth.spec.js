@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-const azureSign = require("../dist/azureRestAuth");
+const {AzureSign} = require("../dist/azureRestAuth");
 const assert = require("assert");
 
 describe("It generates azure shared key authorizaton string", function(){
    
     before(function(){
-        myAzureSign = new azureSign("tsmatsuzsttest0001", "93K17Co74T2lDHk2rA+wmb/avIAS6u6lPnZrk2hyT+9+aov82qNhrcXSNGZCzm9mjd4d75/oxxOr6r1JVpgTLA=="); 
+        myAzureSign = new AzureSign("tsmatsuzsttest0001", "93K17Co74T2lDHk2rA+wmb/avIAS6u6lPnZrk2hyT+9+aov82qNhrcXSNGZCzm9mjd4d75/oxxOr6r1JVpgTLA=="); 
     });
     
     it("Produces a canonacolised string from x-ms- header values", function(){

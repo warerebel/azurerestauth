@@ -1,6 +1,6 @@
 import { createHmac } from "crypto";
 
-interface HttpOptions {
+export interface HttpOptions {
     headers: {[index: string]: string};
     method: string;
     host: string;
@@ -9,7 +9,7 @@ interface HttpOptions {
     [propName: string]: any;
 }
 
-class AzureSign{
+export class AzureSign{
     account: string;
     key: Buffer;
     constructor(account: string, key: string){
@@ -103,6 +103,5 @@ class AzureSign{
     }
 }
 
-module.exports = AzureSign;
 
 
