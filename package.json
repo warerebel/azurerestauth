@@ -1,13 +1,15 @@
 {
   "name": "@warerebel/azurerestauth",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Node module to provide Azure REST API shared key authorization headers",
   "main": "dist/azureRestAuth.js",
   "types": "azureRestAuth.d.ts",
-  "directories": {
-    "lib": "dist",
-    "test": "test"
-  },
+  "files": [
+    "dist/*.js",
+    "src/*.ts",
+    "test/*.spec.js",
+    "azureRestAuth.d.ts"
+  ],
   "scripts": {
     "build": "node node_modules/typescript/bin/tsc",
     "test": "node node_modules/nyc/bin/nyc node_modules/mocha/bin/mocha test/*.spec.js",
