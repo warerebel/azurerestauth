@@ -1,10 +1,7 @@
 // Type definitions for azureRestAuth 0.4.0
 // Project: azureRestAuth
 
-export = AzureSign;
-
-/*~ Write your module's methods and properties in this class */
-declare class AzureSign {
+export class AzureSign {
     constructor(accountName?: string, SASToken?: string);
 
     account: string[];
@@ -13,7 +10,7 @@ declare class AzureSign {
     getAuthHeaderValue(request: HttpOptions): string;
 }
 
-declare interface HttpOptions {
+export interface HttpOptions {
     headers?: {[index: string]: any};
     method: string;
     host: string;
