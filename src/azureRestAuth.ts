@@ -2,7 +2,7 @@ import { createHmac } from "crypto";
 import {Agent} from "http";
 
 export interface HttpOptions {
-    headers?: {[index: string]: string};
+    headers: {[index: string]: string};
     method: string;
     host: string;
     protocol: string;
