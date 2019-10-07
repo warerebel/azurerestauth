@@ -4,6 +4,8 @@ node_js:
 before_script: npm run build
 after_success: npm run coverage
 deploy:
+  on:
+    branch: master
   skip_cleanup: true
   provider: npm
   email: npm@warerebel.com

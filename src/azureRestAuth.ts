@@ -2,13 +2,13 @@ import { createHmac } from "crypto";
 import {Agent} from "http";
 
 export interface HttpOptions {
-    headers: {[index: string]: string};
+    headers: {[index: string]: string | number};
     method: string;
     host: string;
     protocol: string;
     path: string;
     agent: Agent;
-    [propName: string]: any;
+    [propName: string]: unknown;
 }
 
 export class AzureSign{
@@ -40,7 +40,7 @@ export class AzureSign{
         string += request.method + "\n";
         string += typeof requestObject["Content-Encoding"] !== "undefined" ? requestObject["Content-Encoding"] + "\n" : "\n";
         string += typeof requestObject["Content-Language"] !== "undefined" ? requestObject["Content-Language"] + "\n" : "\n";
-        string += typeof requestObject["Content-Length"] !== "undefined" && parseInt(requestObject["Content-Length"]) > 0 ? requestObject["Content-Length"] + "\n" : "\n";
+        string += typeof requestObject["Content-Length"] !== "undefined" && parseInt(requestObject["Content-Length"] as string) > 0 ? requestObject["Content-Length"] + "\n" : "\n";
         string += typeof requestObject["Content-MD5"] !== "undefined" ? requestObject["Content-MD5"] + "\n" : "\n";
         string += typeof requestObject["Content-Type"] !== "undefined" ? requestObject["Content-Type"] + "\n" : "\n"; 
         string += typeof requestObject.Date !== "undefined" ? requestObject.Date + "\n" : "\n";
@@ -75,8 +75,11 @@ export class AzureSign{
         return canonicalString;
     }
     
-    trimSpaces(inString: string): string{
-        return typeof inString.replace !== "undefined" ? inString.replace(/\s+/g," ") : inString;
+    trimSpaces(inString: string | number): string | number{
+        if ((inString as string).replace)
+            return (inString as string).replace(/\s+/g," ");
+        else
+            return inString;
     }
     
     canonicalisedResource(request: HttpOptions): string{

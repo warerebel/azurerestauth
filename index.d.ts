@@ -10,7 +10,7 @@ export class AzureSign {
 }
 
 export interface HttpOptions {
-    headers?: {[index: string]: any};
+    headers?: {[index: string]: string | number};
     method: string;
     host: string;
     protocol: string;
