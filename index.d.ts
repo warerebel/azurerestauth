@@ -1,5 +1,4 @@
-// Type definitions for azureRestAuth 0.4.0
-// Project: azureRestAuth
+import {Agent} from "http";
 
 export class AzureSign {
     constructor(accountName?: string, SASToken?: string);
@@ -16,4 +15,5 @@ export interface HttpOptions {
     host: string;
     protocol: string;
     path?: string;
+    agent?: Agent;
 }

@@ -7,7 +7,7 @@ export interface HttpOptions {
     host: string;
     protocol: string;
     path: string;
-    agent?: Agent;
+    agent: Agent;
     [propName: string]: any;
 }
 
