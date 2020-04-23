@@ -1,12 +1,26 @@
+// Copyright 2019 Chris Lount
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 import {AzureSign} from "../src/azureRestAuth";
 import * as assert from "assert";
 
 describe("It generates azure shared key authorizaton string", function(){
-   
+
     before(function(){
-        this.myAzureSign = new AzureSign("tsmatsuzsttest0001", "93K17Co74T2lDHk2rA+wmb/avIAS6u6lPnZrk2hyT+9+aov82qNhrcXSNGZCzm9mjd4d75/oxxOr6r1JVpgTLA=="); 
+        this.myAzureSign = new AzureSign("tsmatsuzsttest0001", "93K17Co74T2lDHk2rA+wmb/avIAS6u6lPnZrk2hyT+9+aov82qNhrcXSNGZCzm9mjd4d75/oxxOr6r1JVpgTLA==");
     });
-    
+
     it("Produces a canonacolised string from x-ms- header values", function(){
         const testObject = {
             headers: {
@@ -18,7 +32,7 @@ describe("It generates azure shared key authorizaton string", function(){
         const expectedString = "x-ms-date:Sat, 21 Feb 2015 00:48:38 GMT\nx-ms-version:2014-02-14\n";
         assert.deepEqual(this.myAzureSign.canonicalisedHeaders(testObject), expectedString);
     });
-    
+
     it("builds a string from a header object", function(){
         let date = new Date();
         let testObject = {
@@ -40,7 +54,7 @@ describe("It generates azure shared key authorizaton string", function(){
         let expectedString = "GET\ngzip\nen\n\nMD5String\napplication/json\n" + date + "\nTue, 05 Jul 2016 06:48:26 GMT\nitemOne\nitemTwo\nTue, 07 Jul 2016 06:48:26 GMT\ntestRange\n";
         assert.deepEqual(this.myAzureSign.headerString(testObject), expectedString);
     });
-    
+
     it("signs the string", function(){
         let testObject = {
             method: "GET",
@@ -55,7 +69,7 @@ describe("It generates azure shared key authorizaton string", function(){
         };
         assert.deepEqual(this.myAzureSign.getAuthHeaderValue(testObject), "SharedKey tsmatsuzsttest0001:sGX7uEBy8i9ldZtx8nLDeD3vX3AI/LB/3msK0oL7oMI=");
     });
-    
+
     it("Produces a canonicalised resource string for accessing the resource", function(){
         let url = {
             protocol: "https:",
@@ -79,7 +93,7 @@ describe("It generates azure shared key authorizaton string", function(){
         assert.deepEqual(this.myAzureSign.canonicalisedResource(urlTwo), expectedTwo);
         assert.deepEqual(this.myAzureSign.canonicalisedResource(urlThree), expectedThree);
     });
-    
+
     it("produces a full string for signing", function(){
         let date = new Date();
         let testObject = {
