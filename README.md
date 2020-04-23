@@ -2,12 +2,12 @@
 [![Coverage Status](https://coveralls.io/repos/github/warerebel/azurerestauth/badge.svg?branch=master)](https://coveralls.io/github/warerebel/azurerestauth?branch=master)
 <br />
 
-# Introduction 
-Node module to provide Azure shared key authorization strings for using the storage REST API.
+# Introduction
+Node module to generate Azure shared key authorization strings for using the REST API.
 
 # Getting Started
 Call the constructor with the storage account name and the shared key that will be used to sign requests to the REST API.
-Call `getAuthHeaderValue` with the http request options and the `Authorization` header value will be returned. 
+Call `getAuthHeaderValue` with the http request options and the `Authorization` header value will be returned.
 ```javascript
 const azureRestAuth = require("azureRestAuth");
 
