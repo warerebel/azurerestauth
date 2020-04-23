@@ -9,11 +9,11 @@ Node module to generate Azure shared key authorization strings for using the RES
 Call the constructor with the storage account name and the shared key that will be used to sign requests to the REST API.
 Call `getAuthHeaderValue` with the http request options and the `Authorization` header value will be returned.
 ```javascript
-const azureRestAuth = require("azureRestAuth");
+const azureRestAuth = require("@warerebel/azurerestauth");
 
-let myAzureRestAuth = new azureRestAuth("account name", "Shared key");
+let myAzureRestAuth = new azureRestAuth.AzureSign("account name", "Shared key");
 
-let httpOtpions = {
+let httpOptions = {
     method: "GET",
     protocol: "https:",
     host: "testsite.blob.core.windows.net",
@@ -25,7 +25,7 @@ let httpOtpions = {
             },
 }
 
-httpOptions.headers.Authorization = myAzureRestAuth.getAuthHeaderValue(httpOtions);
+httpOptions.headers.Authorization = myAzureRestAuth.getAuthHeaderValue(httpOptions);
 ```
 
 # Build and Test
