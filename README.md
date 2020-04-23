@@ -8,7 +8,6 @@ Node module to generate Azure shared key authorization strings for using the RES
 # Getting Started
 Call the constructor with the storage account name and the shared key that will be used to sign requests to the REST API.
 Call `getAuthHeaderValue` with the http request options and the `Authorization` header value will be returned.
-
 ## Javascript
 ```javascript
 const azureRestAuth = require("@warerebel/azurerestauth");
