@@ -30,6 +30,7 @@ export class AzureSign{
     key: Buffer;
     constructor(account: string, key: string){
         this.account = account;
+        /* istanbul ignore next */
         this.key = typeof key !== "undefined" ? Buffer.from(key, "base64") : Buffer.from("");
     }
 
@@ -90,10 +91,10 @@ export class AzureSign{
     }
 
     trimSpaces(inString: string | number): string | number{
-        if ((inString as string).replace)
+        if (typeof inString === "string")
             return (inString as string).replace(/\s+/g," ");
         else
-            return inString;
+            return inString.toString();
     }
 
     canonicalisedResource(request: HttpOptions): string{
